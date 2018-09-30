@@ -1,0 +1,26 @@
+html {
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+}
+
+.div {
+  max-width: 100%;
+  text-align: center;
+}
+
+button {
+  margin: 4px;
+}
+
+.form-group {
+  margin: 4px;
+}
+
+input.form-control {
+  font-size: 20px;
+}
