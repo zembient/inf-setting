@@ -1,6 +1,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
-    <title>お薬リマインダー登録｜まるもん
+    <title>初期設定 | まるもん
     </title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -10,47 +10,27 @@
 <body>
     <div class="container">
         <div class="form-group">
-            おばあちゃんの薬を登録すると、<br>
-            まるもんがお薬を飲むように通知するもん。
+            初期設定をするもん！
         </div>
+        
         <div class="form-group input-group input-group-lg">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg">お薬名</span>
+                <span class="input-group-text" id="inputGroup-sizing-lg">子供の名前</span>
             </div>
-            <input type="text" id="medicine" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            <input type="text" id="childrenName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
 
-        <div class="form-group form-check">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="timing" type="checkbox" id="syokuzen" value="1">
-                <label class="form-check-label" for="inlineCheckbox1">食前</label>
+        <div class="form-group input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">祖父母の呼び方</span>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="timing" type="checkbox" id="syokugo" value="2">
-                <label class="form-check-label" for="inlineCheckbox2">食後</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="timing" type="checkbox" id="syokkan" value="3">
-                <label class="form-check-label" for="inlineCheckbox3">食間</label>
-            </div>
+            <input type="text" id="grandparentsName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
-        <div class="form-group form-check">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="meal" type="checkbox" id="asa" value="1">
-                <label class="form-check-label" for="inlineCheckbox1">朝</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="meal" type="checkbox" id="hiru" value="2">
-                <label class="form-check-label" for="inlineCheckbox2">昼</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="meal" type="checkbox" id="yoru" value="3">
-                <label class="form-check-label" for="inlineCheckbox3">夕</label>
-            </div>
-        </div>
-        <button type="button" id="register" class="btn btn-primary btn-lg">リマインダー登録</button>
+
+        <button type="button" id="register" class="btn btn-primary btn-lg">登録</button>
     </div>
 
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.212.1.min.js"></script>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="liff-starter.js"></script>
 </body>
