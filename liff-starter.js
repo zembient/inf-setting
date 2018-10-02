@@ -1,3 +1,16 @@
+AWS.config.update({
+  region: "ap-northeast-1",
+  endpoint: "https://dynamodb.ap-northeast-1.amazonaws.com",
+  accessKeyId: "7zn%A4c6mKtu,AKIAJSPOEJCAG5JCDNUQ",
+  secretAccessKey: "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"
+});
+
+var dynamodb = new AWS.DynamoDB();
+var docClient = new AWS.DynamoDB.DocumentClient();
+var date = new Date();
+
+var now = date.toLocaleString();
+
 window.onload = function(e) {
   liff.init(
     data => {
@@ -6,11 +19,19 @@ window.onload = function(e) {
         const grandparentsName = document.getElementById("grandparentsName").value;
 
         console.log(childrenName);
-        console.log(parentsName);
-
+        console.log(grandparentsName);
         console.log("register button clicked!");
 
-        
+        var params = {
+          TableName: 'inf-setting',
+          Item:{//プライマリキーを必ず含める（ソートキーがある場合はソートキーも）
+               userId: "test",
+               created: now,
+               childrenName: childrenName,
+               grandparentsName: grandparentsName,
+          }
+      };
+      docClient.put(params, callback);
 
         liff
           .sendMessages([
