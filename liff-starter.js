@@ -3,9 +3,9 @@ $( function() {
 
   var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
 
-  $('#button').click(
+  $('#register').click(
       function(){
-        console.log("test");
+          console.log("test");
           var formData = $("#form").serialize();
           console.log("formData:" + formData);
           $.ajax({
