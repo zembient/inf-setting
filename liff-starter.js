@@ -5,6 +5,7 @@ $( function() {
 
   $('#button').click(
       function(){
+        console.log("test");
           var formData = $("#form").serialize();
           console.log("formData:" + formData);
           $.ajax({
