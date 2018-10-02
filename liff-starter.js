@@ -1,60 +1,37 @@
-AWS.config.update({
-  region: "ap-northeast-1",
-  endpoint: "https://dynamodb.ap-northeast-1.amazonaws.com",
-  accessKeyId: "7zn%A4c6mKtu,AKIAJSPOEJCAG5JCDNUQ",
-  secretAccessKey: "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"
-});
 
-var dynamodb = new AWS.DynamoDB();
-var docClient = new AWS.DynamoDB.DocumentClient();
-var date = new Date();
+$( function() {
 
-var now = date.toLocaleString();
+  var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
 
-window.onload = function(e) {
-  liff.init(
-    data => {
-      document.getElementById("register").addEventListener("click", function() {
-        const childrenName = document.getElementById("childrenName").value;
-        const grandparentsName = document.getElementById("grandparentsName").value;
+  $('#button').click(
+      function(){
+          var formData = $("#form").serialize();
+          console.log("formData:" + formData);
+          $.ajax({
+              url:apiUrl, // 通信先のURL
+              type:'POST',// 使用するHTTPメソッド (GET/ POST)
+              data:formData, // 送信するデータ
+              dataType:'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
+              contentType: "application/json",
+              
+              // 通信に成功した時に実行される
+              }).done(function(response,textStatus,jqXHR) {
+                  console.log("成功:" + jqXHR.status);
 
-        console.log(childrenName);
-        console.log(grandparentsName);
-        console.log("register button clicked!");
+                  if (response.completed == 1)
+                  {
+                      $('#message').html('登録を完了しました。');
+                      console.log(response.data.email);
+                  }
+                  else if(response.completed == 0)
+                  {
+                      $('#message').html('サーバーの内部エラーのため登録が失敗しました。');
+                  }
 
-        var params = {
-          TableName: 'inf-setting',
-          Item:{//プライマリキーを必ず含める（ソートキーがある場合はソートキーも）
-               userId: "test",
-               created: now,
-               childrenName: childrenName,
-               grandparentsName: grandparentsName,
-          }
-      };
-      docClient.put(params, callback);
-
-        liff
-          .sendMessages([
-            {
-              type: "text",
-              text: `<登録したもん！>\n 子供の名前：${childrenName}\ 祖父母の名前：${parentsName}`
-            },
-            {
-              type: "text",
-              text: ``
-            }
-          ])
-          .then(function() {
-            liff.closeWindow();
-          })
-          .catch(function(error) {
-            window.alert("Error sending message: " + error);
-          });
-        liff.closeWindow();
+               // 通信に失敗した時に実行される
+              }).fail(function(jqXHR, textStatus, errorThrown) {
+                  alert("失敗:" + jqXHR.status);
+                  console.log("失敗:" + jqXHR.status);
+              });
       });
-    },
-    err => {
-      console.log(err);
-    }
-  );
-};
+});

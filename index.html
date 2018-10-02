@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
     <title>初期設定 | まるもん
     </title>
@@ -13,14 +16,15 @@
             初期設定をするもん！
         </div>
         
+        <div id="message"></div>
+
+        <form id = "form" action = "">
         <div class="form-group input-group input-group-lg">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-lg">子供の名前</span>
             </div>
             <input type="text" id="childrenName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-        </div>
 
-        <div class="form-group input-group input-group-lg">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-lg">祖父母の呼び方</span>
             </div>
@@ -28,9 +32,11 @@
         </div>
 
         <button type="button" id="register" class="btn btn-primary btn-lg">登録</button>
+        </form>
     </div>
 
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.212.1.min.js"></script>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="liff-starter.js"></script>
 </body>
