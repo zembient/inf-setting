@@ -10,6 +10,10 @@ $(function () {
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 
+            liff.sendMessages([{
+                type: 'text',
+                text: lineId + childrenName + grandparentsName
+            }])
 
             console.log("lineId:" + lineId);
             console.log("childrenName:" + childrenName);
