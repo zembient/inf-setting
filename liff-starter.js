@@ -13,13 +13,6 @@ $(function () {
             console.log("childrenName:" + childrenName);
             console.log("grandparentsName:" + grandparentsName);
 
-            liff.sendMessages([{
-                type: 'text',
-                text: lineId + childrenName + grandparentsName
-            }])
-
-            alert(lineId);
-
             $.ajax({
                 url: apiUrl, // 通信先のURL
                 type: 'POST',// 使用するHTTPメソッド (GET/ POST)
