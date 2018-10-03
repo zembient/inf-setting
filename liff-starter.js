@@ -15,14 +15,16 @@ $(function () {
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 
+            console.log("lineId:" + lineId);
+            console.log("childrenName:" + childrenName);
+            console.log("grandparentsName:" + grandparentsName);
+
             liff.sendMessages([{
                 type: 'text',
                 text: lineId + childrenName + grandparentsName
             }])
 
-            console.log("lineId:" + lineId);
-            console.log("childrenName:" + childrenName);
-            console.log("grandparentsName:" + grandparentsName);
+            alert(lineId);
 
             $.ajax({
                 url: apiUrl, // 通信先のURL
