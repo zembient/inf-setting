@@ -1,9 +1,3 @@
-window.onload = function (e) {
-    liff.init(function (data) {
-        var data = data;
-    });
-};
-
 $(function () {
 
     var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
@@ -11,7 +5,7 @@ $(function () {
     $('#register').click(
         function () {
             console.log("test");
-            const lineId = data.context.userId;
+            const lineId = "test";
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 

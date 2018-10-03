@@ -1,26 +1,94 @@
 html {
+
   font-size: 20px;
+
 }
 
+body{
+
+　 /*文字色*/
+  color:#9b6a4e;
+
+  /*背景画像が読み込まれる前の背景色*/
+  background-color:#8bdbff;
+
+  /*表示するコンテナの大きさに基づいて背景画像を調節*/
+  background-size:cover;
+
+  /*背景画像のURL*/
+  background-image: url(background-image.png);
+
+  /*背景画像を中央に配置*/
+  background-position: center center;
+
+  /*背景画像をタイル状に繰り返し表示しない*/
+  background-repeat: no-repeat;
+
+     }
+
+/*テキストボックスのラベル*/
+#inputGroup-sizing-lg{
+
+   /*文字色*/
+   color:#9b6a4e;
+　　
+　　/*背景色*/
+   background-color:#000000;
+
+
+  }
+         
+
+
 table {
+
   width: 100%;
   table-layout: fixed;
   word-break: break-all;
+
 }
+
+
+
 
 .div {
+
   max-width: 100%;
   text-align: center;
+
 }
 
+
+
+/*ボタン*/
 button {
-  margin: 4px;
+
+    /*ボーダーを表示しない*/
+    border: 0px;
+
+    /*ボタン画像のサイズ*/
+    width:469px;
+    height:308px;
+
+    /*ボタン画像のURL、繰り返し表示しない*/
+    background: url(submit.jpg) no-repeat;
+
 }
+
+
+
 
 .form-group {
+
   margin: 4px;
+
 }
 
+
+
+
 input.form-control {
+
   font-size: 20px;
+
 }
