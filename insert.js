@@ -1,12 +1,17 @@
+window.onload = function (e) {
+    liff.init(function (data) {
+        insert(data);
+    });
+};
 
-$(function () {
+$(function insert(data) {
 
     var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
 
     $('#register').click(
         function () {
             console.log("test");
-            const lineId = document.getElementById('useridfield');
+            const lineId = data.data.context.userId;
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 
