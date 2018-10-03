@@ -7,7 +7,16 @@ $( function() {
       function(){
           console.log("test");
           var formData = $("#form").serialize();
+          const lineId = document.getElementById('useridfield').textContent;
+          const childrenName = document.getElementById("childrenName").textContent;
+          const grandparentsName = document.getElementById('grandparentsName').textContent;
+
+
+          console.log("lineId:" + lineId);
+          console.log("childrenName:" + childrenName);
+          console.log("grandparentsName:" + grandparentsName);
           console.log("formData:" + formData);
+
           $.ajax({
               url:apiUrl, // 通信先のURL
               type:'POST',// 使用するHTTPメソッド (GET/ POST)
