@@ -1,10 +1,10 @@
 window.onload = function (e) {
     liff.init(function (data) {
-        insert(data);
+        var data = data;
     });
 };
 
-$(function insert(data) {
+$(function () {
 
     var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
 
