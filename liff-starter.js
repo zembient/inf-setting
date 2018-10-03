@@ -19,7 +19,7 @@ $(function () {
                 data: {
                     lineId: lineId,
                     childrenName: childrenName,
-                    childrenName: childrenName
+                    childrenName: childrenName,
                 }, // 送信するデータ
                 dataType: 'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
                 contentType: "application/json",
