@@ -8,8 +8,8 @@ $( function() {
           console.log("test");
           var formData = $("#form").serialize();
           const lineId = document.getElementById('useridfield');
-          const childrenName = document.getElementById("childrenName");
-          const grandparentsName = document.getElementById('grandparentsName');
+          const childrenName = document.getElementById("childrenName").value;
+          const grandparentsName = document.getElementById('grandparentsName').value;
 
 
           console.log("lineId:" + lineId);
