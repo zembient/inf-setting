@@ -20,7 +20,11 @@ $( function() {
           $.ajax({
               url:apiUrl, // 通信先のURL
               type:'POST',// 使用するHTTPメソッド (GET/ POST)
-              data:formData, // 送信するデータ
+              data:{
+                  lineId: lineId,
+                  childrenName: childrenName,
+                  childrenName: childrenName
+              }, // 送信するデータ
               dataType:'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
               contentType: "application/json",
               
