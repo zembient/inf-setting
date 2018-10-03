@@ -61,14 +61,14 @@ table {
 
 
 /*ボタン*/
-button {
+#register {
 
     /*ボーダーを表示しない*/
     border: 0px;
 
     /*ボタン画像のサイズ*/
-    width:469px;
-    height:308px;
+    width:16px;
+    height:16px;
 
     /*ボタン画像のURL、繰り返し表示しない*/
     background: url(submit.jpg) no-repeat;
