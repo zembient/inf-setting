@@ -11,7 +11,7 @@ $(function insert(data) {
     $('#register').click(
         function () {
             console.log("test");
-            const lineId = data.data.context.userId;
+            const lineId = data.context.userId;
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 
