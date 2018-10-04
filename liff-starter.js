@@ -1,3 +1,11 @@
+var dt = null;
+
+window.onload = function (e) {
+    liff.init(function (data) {
+        dt = data;
+    });
+};
+
 $(function () {
 
     var apiUrl = 'https://ho8169zonf.execute-api.ap-northeast-1.amazonaws.com/dev/setting';
@@ -5,7 +13,7 @@ $(function () {
     $('#register').click(
         function () {
             console.log("test");
-            const lineId = "test";
+            const lineId = dt.context.userId;
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
 
@@ -16,17 +24,12 @@ $(function () {
             $.ajax({
                 url: apiUrl, // 通信先のURL
                 type: 'POST',// 使用するHTTPメソッド (GET/ POST)
-                data: {
+                
+                data:JSON.stringify({
                     lineId: lineId,
                     childrenName: childrenName,
-                    grangparentsName: grandparentsName,
-
-                }, // 送信するデータ
-                headers: {
-                    'Origin': ""
-                },
-                dataType: 'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
-                contentType: "application/json",
+                    grandparentsName: grandparentsName,
+                    })
 
                 // 通信に成功した時に実行される
             }).done(function (response, textStatus, jqXHR) {
@@ -45,7 +48,7 @@ $(function () {
 
                 liff.sendMessages([{
                     type: 'text',
-                    text: "error"
+                    text: "エラーだもん (>_<)"
                 }])
                 alert("失敗:" + jqXHR.status);
                 console.log("失敗:" + jqXHR.status);
