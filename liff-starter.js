@@ -39,7 +39,7 @@ $(function () {
                     type: 'text',
                     text: '初期設定が完了だもん！'
                 }])
-                window.close();
+                liff.closeWindow();
 
                 if (response.completed == 1) {
                     $('#message').html('登録を完了しました。');
