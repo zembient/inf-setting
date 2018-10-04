@@ -19,8 +19,12 @@ $(function () {
                 data: {
                     lineId: lineId,
                     childrenName: childrenName,
-                    childrenName: childrenName,
+                    grangparentsName: grandparentsName,
+
                 }, // 送信するデータ
+                headers: {
+                    'Origin': ""
+                },
                 dataType: 'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
                 contentType: "application/json",
 
