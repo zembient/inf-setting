@@ -12,7 +12,6 @@ $(function () {
 
     $('#register').click(
         function () {
-            console.log("test");
             const lineId = dt.context.userId;
             const childrenName = document.getElementById("childrenName").value;
             const grandparentsName = document.getElementById('grandparentsName').value;
