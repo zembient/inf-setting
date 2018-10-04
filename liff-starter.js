@@ -35,6 +35,12 @@ $(function () {
             }).done(function (response, textStatus, jqXHR) {
                 console.log("成功:" + jqXHR.status);
 
+                liff.sendMessages([{
+                    type: 'text',
+                    text: '初期設定が完了だもん！'
+                }])
+                window.close();
+
                 if (response.completed == 1) {
                     $('#message').html('登録を完了しました。');
                     console.log(response.data.email);
